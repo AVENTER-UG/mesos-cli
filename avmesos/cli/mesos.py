@@ -34,14 +34,12 @@ from queue import Queue
 
 import termios
 
-from mesos.cli import http
-from mesos.cli import util
-from mesos.cli.exceptions import CLIException
-
-import mesos.http
-from mesos import recordio
-from mesos.exceptions import MesosException
-from mesos.exceptions import MesosHTTPException
+from avmesos.cli import http
+from avmesos.cli import util
+from avmesos.cli.exceptions import CLIException
+from avmesos import recordio
+from avmesos.exceptions import MesosException
+from avmesos.exceptions import MesosHTTPException
 
 
 def get_agent_address(agent_id, master, config):

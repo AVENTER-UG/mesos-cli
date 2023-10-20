@@ -23,10 +23,10 @@ import toml
 
 import requests
 
-from mesos import cli
-from mesos.cli.constants import DEFAULT_MASTER_IP
-from mesos.cli.constants import DEFAULT_MASTER_PORT
-from mesos.cli.exceptions import CLIException
+from avmesos import cli
+from avmesos.cli.constants import DEFAULT_MASTER_IP
+from avmesos.cli.constants import DEFAULT_MASTER_PORT
+from avmesos.cli.exceptions import CLIException
 
 
 class Config():

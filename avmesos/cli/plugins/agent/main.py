@@ -18,10 +18,10 @@
 The agent plugin.
 """
 
-from mesos.cli.exceptions import CLIException
-from mesos.cli.mesos import get_agents
-from mesos.cli.plugins import PluginBase
-from mesos.cli.util import Table
+from avmesos.cli.exceptions import CLIException
+from avmesos.cli.mesos import get_agents
+from avmesos.cli.plugins import PluginBase
+from avmesos.cli.util import Table
 
 
 PLUGIN_NAME = "agent"

@@ -29,14 +29,14 @@ import requests
 import tenacity
 import ujson
 
-from mesos.exceptions import MesosException
-from mesos.exceptions import MesosHTTPException
-from mesos.exceptions import MesosAuthenticationException
-from mesos.exceptions import MesosAuthorizationException
-from mesos.exceptions import MesosBadRequestException
-from mesos.exceptions import MesosInternalServerErrorException
-from mesos.exceptions import MesosServiceUnavailableException
-from mesos.exceptions import MesosUnprocessableException
+from avmesos.exceptions import MesosException
+from avmesos.exceptions import MesosHTTPException
+from avmesos.exceptions import MesosAuthenticationException
+from avmesos.exceptions import MesosAuthorizationException
+from avmesos.exceptions import MesosBadRequestException
+from avmesos.exceptions import MesosInternalServerErrorException
+from avmesos.exceptions import MesosServiceUnavailableException
+from avmesos.exceptions import MesosUnprocessableException
 
 METHOD_HEAD = 'HEAD'
 METHOD_GET = 'GET'

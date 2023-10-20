@@ -29,7 +29,7 @@ import urllib.parse
 
 from kazoo.client import KazooClient
 
-from mesos.cli.exceptions import CLIException
+from avmesos.cli.exceptions import CLIException
 
 
 def import_modules(package_paths, module_type):

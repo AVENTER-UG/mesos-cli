@@ -4,5 +4,5 @@
 .tox
 build/
 dist/
-mesos_cli.egg-info/
-mesos.egg-info
+avmesos_cli.egg-info/
+avmesos.egg-info

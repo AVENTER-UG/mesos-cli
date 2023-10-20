@@ -34,7 +34,7 @@ header of 4 bytes to directly encode an unsigned 32 bit
 length.
 """
 
-from mesos.exceptions import MesosException
+from avmesos.exceptions import MesosException
 
 
 class Encoder():

@@ -22,9 +22,8 @@ import json
 from urllib.parse import urlencode
 import urllib3
 
-from mesos import cli
-
-from mesos.cli.exceptions import CLIException
+from avmesos import cli
+from avmesos.cli.exceptions import CLIException
 
 # Disable all SSL warnings. These are not necessary, as the user has
 # the option to disable SSL verification.

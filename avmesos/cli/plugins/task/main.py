@@ -20,12 +20,11 @@ The task plugin.
 
 import json
 
-from mesos.cli.exceptions import CLIException
-from mesos.cli.mesos import get_tasks
-from mesos.cli.plugins import PluginBase
-from mesos.cli.util import Table
-
-from mesos.cli.mesos import TaskIO
+from avmesos.cli.exceptions import CLIException
+from avmesos.cli.mesos import get_tasks
+from avmesos.cli.plugins import PluginBase
+from avmesos.cli.util import Table
+from avmesos.cli.mesos import TaskIO
 
 PLUGIN_NAME = "task"
 PLUGIN_CLASS = "Task"

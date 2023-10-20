@@ -9,7 +9,7 @@ on your system before you begin.
 
 ```bash
 
-pip install mesos-cli
+pip install avmesos-cli
 
 ```
 

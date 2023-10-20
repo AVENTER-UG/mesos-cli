@@ -9,7 +9,7 @@ with open('pip-requirements.txt', 'r') as f:
     install_requires = f.read().splitlines()    
 
 setup(
-    name="mesos-cli",
+    name="avmesos-cli",
     version="1.0.0",
     description="Apache Mesos CLI",
     long_description=README,

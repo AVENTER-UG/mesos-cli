@@ -22,11 +22,10 @@ import sys
 
 
 
-from mesos import cli
-
-from mesos.cli import settings
-from mesos.cli.docopt import docopt
-from mesos.cli.exceptions import CLIException
+from avmesos import cli
+from avmesos.cli import settings
+from avmesos.cli.docopt import docopt
+from avmesos.cli.exceptions import CLIException
 
 
 VERSION = "Mesos " + settings.VERSION + " CLI"
