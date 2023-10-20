@@ -10,7 +10,7 @@ with open('pip-requirements.txt', 'r') as f:
 
 setup(
     name="mesos-cli",
-    version="1.11.0",
+    version="1.0.0",
     description="Apache Mesos CLI",
     long_description=README,
     long_description_content_type="text/markdown",
