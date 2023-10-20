@@ -20,9 +20,9 @@ Plugin's Base Class
 
 import sys
 
-import cli
+from mesos import cli
 
-from cli.docopt import docopt
+from mesos.cli.docopt import docopt
 
 
 PLUGIN_NAME = "base-plugin"

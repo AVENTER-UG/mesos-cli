@@ -20,12 +20,13 @@ This is the main executable of the mesos-cli.
 
 import sys
 
-import settings
 
-import cli
 
-from cli.docopt import docopt
-from cli.exceptions import CLIException
+from mesos import cli
+
+from mesos.cli import settings
+from mesos.cli.docopt import docopt
+from mesos.cli.exceptions import CLIException
 
 
 VERSION = "Mesos " + settings.VERSION + " CLI"

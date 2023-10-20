@@ -20,10 +20,10 @@ The framework plugin.
 
 import json
 
-from cli.exceptions import CLIException
-from cli.mesos import get_frameworks
-from cli.plugins import PluginBase
-from cli.util import Table
+from mesos.cli.exceptions import CLIException
+from mesos.cli.mesos import get_frameworks
+from mesos.cli.plugins import PluginBase
+from mesos.cli.util import Table
 
 
 PLUGIN_NAME = "framework"

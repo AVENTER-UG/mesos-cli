@@ -21,11 +21,11 @@ The config plugin.
 import os
 import sys
 
-import cli
+from mesos import cli
 
-from cli.exceptions import CLIException
-from cli.plugins import PluginBase
-from cli.util import Table
+from mesos.cli.exceptions import CLIException
+from mesos.cli.plugins import PluginBase
+from mesos.cli.util import Table
 
 
 PLUGIN_NAME = "config"

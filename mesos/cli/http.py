@@ -22,9 +22,9 @@ import json
 from urllib.parse import urlencode
 import urllib3
 
-import cli
+from mesos import cli
 
-from cli.exceptions import CLIException
+from mesos.cli.exceptions import CLIException
 
 # Disable all SSL warnings. These are not necessary, as the user has
 # the option to disable SSL verification.
@@ -50,7 +50,11 @@ def read_endpoint(addr, endpoint, config, query=None):
             )
         else:
             headers = None
-        http = urllib3.PoolManager()
+
+        if config.ssl_verify() is not True:
+            http = urllib3.PoolManager(cert_reqs='CERT_NONE')
+        else:
+            http = urllib3.PoolManager()
         http_response = http.request(
             'GET',
             url,

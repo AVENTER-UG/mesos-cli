@@ -22,11 +22,11 @@ import os
 import toml
 
 import requests
-import cli
 
-from cli.constants import DEFAULT_MASTER_IP
-from cli.constants import DEFAULT_MASTER_PORT
-from cli.exceptions import CLIException
+from mesos import cli
+from mesos.cli.constants import DEFAULT_MASTER_IP
+from mesos.cli.constants import DEFAULT_MASTER_PORT
+from mesos.cli.exceptions import CLIException
 
 
 class Config():
@@ -154,6 +154,20 @@ class Config():
             ssl_verify = self.data["agent"].get("ssl_verify", default)
             if not isinstance(ssl_verify, bool):
                 raise CLIException("The 'agent->ssl_verify' field"
+                                   " must be True/False")
+
+            return ssl_verify
+
+        return default
+    
+    def ssl_verify(self, default=False):
+        """
+        Return if the ssl certificate should be verified
+        """
+        if "master" in self.data:
+            ssl_verify = self.data["master"].get("ssl_verify", default)
+            if not isinstance(ssl_verify, bool):
+                raise CLIException("The 'master->ssl_verify' field"
                                    " must be True/False")
 
             return ssl_verify

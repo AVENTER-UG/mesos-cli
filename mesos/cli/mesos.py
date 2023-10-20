@@ -34,9 +34,9 @@ from queue import Queue
 
 import termios
 
-from cli import http
-from cli import util
-from cli.exceptions import CLIException
+from mesos.cli import http
+from mesos.cli import util
+from mesos.cli.exceptions import CLIException
 
 import mesos.http
 from mesos import recordio
