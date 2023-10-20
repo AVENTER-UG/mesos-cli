@@ -21,8 +21,7 @@ The config plugin.
 import os
 import sys
 
-from mesos import cli
-
+from avmesos import cli
 from avmesos.cli.exceptions import CLIException
 from avmesos.cli.plugins import PluginBase
 from avmesos.cli.util import Table

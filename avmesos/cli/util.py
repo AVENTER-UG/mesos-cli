@@ -45,7 +45,7 @@ def import_modules(package_paths, module_type):
         # the import namespace elsewhere.
         package_name = os.path.basename(package_path)
         package_dir = os.path.dirname(package_path)
-        module_name = "mesos.cli." + module_type + "." + package_name
+        module_name = "avmesos.cli." + module_type + "." + package_name
         try:
             module = importlib.import_module(module_name)
         except Exception:
