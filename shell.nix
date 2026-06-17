@@ -11,6 +11,8 @@ buildInputs = [
 
 SOURCE_DATE_EPOCH = 315532800;
 PROJDIR = "/tmp/python-env";
+S_VOLUME_RO_1 = "/home/$USER/.mesos";
+S_VOLUME_RO_2 = "/home/$USER/Projekte";
 
 shellHook = ''
     echo "Using ${python314.name}"

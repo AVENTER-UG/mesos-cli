@@ -26,31 +26,42 @@ import os
 import re
 import textwrap
 import urllib.parse
+import sys
 
 from kazoo.client import KazooClient
 
 from avmesos.cli.exceptions import CLIException
 
-
 def import_modules(package_paths, module_type):
-    """
-    Looks for python packages under `package_paths` and imports
-    them as modules. Returns a dictionary of the basename of the
-    `package_paths` to the imported modules.
-    """
     modules = {}
+
     for package_path in package_paths:
-        # We put the imported module into the namespace of
-        # "mesos.<module_type>.<>" to keep it from cluttering up
-        # the import namespace elsewhere.
         package_name = os.path.basename(package_path)
         package_dir = os.path.dirname(package_path)
-        module_name = "avmesos.cli." + module_type + "." + package_name
+        module_name = f"avmesos.cli.{module_type}.{package_name}"
+
         try:
             module = importlib.import_module(module_name)
+
         except Exception:
-            obj, filename, data = imp.find_module(package_name, [package_dir])
-            module = imp.load_module(module_name, obj, filename, data)
+            # Load module directly from its package path.
+            init_file = os.path.join(package_path, "__init__.py")
+
+            spec = importlib.util.spec_from_file_location(
+                module_name,
+                init_file,
+                submodule_search_locations=[package_path],
+            )
+
+            if spec is None or spec.loader is None:
+                raise ImportError(
+                    f"Cannot load module '{package_name}' from '{package_path}'"
+                )
+
+            module = importlib.util.module_from_spec(spec)
+            sys.modules[module_name] = module
+            spec.loader.exec_module(module)
+
         modules[package_name] = module
 
     return modules
