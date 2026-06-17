@@ -28,7 +28,7 @@ install:
 
 install-dev:	
 	@echo ">>>> Install python module development"
-	@pip3 install -e .
+	@pip install -e .
 
 docs:
 	@echo ">>>> Build docs"

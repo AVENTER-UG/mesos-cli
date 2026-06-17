@@ -4,20 +4,21 @@ stdenv.mkDerivation {
 name = "python-env";
 
 buildInputs = [
-    python310
-    python310Packages.pip
-    python310Packages.virtualenv
+    python314
+    python314Packages.pip
+    python314Packages.virtualenv
 ];
 
 SOURCE_DATE_EPOCH = 315532800;
-PROJDIR = "${toString ./.}";
+PROJDIR = "/tmp/python-env";
 
 shellHook = ''
-    echo "Using ${python310.name}"
+    echo "Using ${python314.name}"
     export LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib"
     
-    [ ! -d '$PROJDIR/python-dev' ] && virtualenv python-dev && echo "SETUP python-dev: DONE"
-    source python-dev/bin/activate
+    [ ! -d '$PROJDIR/python-dev' ] && virtualenv $PROJDIR && echo "SETUP python-dev: DONE"
+
+    source $PROJDIR/bin/activate
     pip install avmesos
     make install-dev
 

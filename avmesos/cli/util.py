@@ -18,7 +18,7 @@
 A collection of helper functions used by the CLI and its Plugins.
 """
 
-import imp
+import importlib.util
 import importlib
 import ipaddress
 import json

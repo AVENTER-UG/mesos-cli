@@ -10,7 +10,7 @@ with open('pip-requirements.txt', 'r') as f:
 
 setup(
     name="avmesos-cli",
-    version="1.0.0",
+    version="1.1.0",
     description="Apache Mesos CLI",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -21,5 +21,5 @@ setup(
     author="AVENTER UG (haftungsbeschraenkt)",
     author_email="support@aventer.biz",
     url="https://www.aventer.biz/",
-    python_requires=">=3.6",
+    python_requires=">=3.12",
 )
